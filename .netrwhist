@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/matthew.mccurry/repos/writing/test'
+let g:netrw_dirhist_2='/Users/matthew.mccurry/repos/writing/test/tests'
+let g:netrw_dirhist_3='/Users/matthew.mccurry/repos/writing/test/tests/steps'
+let g:netrw_dirhist_4='/Users/matthew.mccurry/repos/writing/test/tests/steps/writing-tools'
+let g:netrw_dirhist_5='/Users/matthew.mccurry/repos/writing'
+let g:netrw_dirhist_6='/Users/matthew.mccurry'
