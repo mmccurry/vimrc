@@ -46,8 +46,22 @@ set list lcs=space:·,tab:>-
 let g:lightline = { 'colorscheme': 'monokai_tasty' }
 "makes lightline work in single window
 set laststatus=2
-"set nerdtree toggle to control o
-map <silent> <Leader>o :NERDTreeToggle<CR>
+"various remappings mostly changing commands using ctrl to leader 
+"because I hate reaching for the ctrl key
+"remap split window to leader ws
+noremap <Leader>ws <C-w>s
+"map switch window up to leader wk
+noremap <Leader>wk <C-w>k
+"map switch window down to leader wj
+noremap <Leader>wj <C-w>j
+"map move back full screen to leader b
+noremap <Leader>up <C-b>
+"map move forward one screen to leader f
+noremap <Leader>dn <C-f>
+"set nerdtree toggle to leader o
+noremap <silent> <Leader>o :NERDTreeToggle<CR>
+"get rid of search highlight with leader + space
+noremap <Leader><Space> :noh<CR>
 "bracket matching
 inoremap " ""<left>
 inoremap ' ''<left>
