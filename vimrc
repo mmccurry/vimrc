@@ -29,6 +29,8 @@ set incsearch
 "various ui changes
 syntax on
 set number
+"default to relative number
+set relativenumber
 set showcmd
 set ruler
 set cursorline
@@ -54,14 +56,18 @@ noremap <Leader>ws <C-w>s
 noremap <Leader>wk <C-w>k
 "map switch window down to leader wj
 noremap <Leader>wj <C-w>j
-"map move back full screen to leader b
+"map move back full screen to leader up
 noremap <Leader>up <C-b>
-"map move forward one screen to leader f
+"map move forward one screen to leader dn
 noremap <Leader>dn <C-f>
+"map redo to leader r
+noremap <Leader>r <C-r>
 "set nerdtree toggle to leader o
 noremap <silent> <Leader>o :NERDTreeToggle<CR>
 "get rid of search highlight with leader + space
 noremap <Leader><Space> :noh<CR>
+"set toggle relative numbers to leader rel
+noremap <Leader>rel :set relativenumber!<CR>
 "bracket matching
 inoremap " ""<left>
 inoremap ' ''<left>
