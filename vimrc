@@ -52,10 +52,16 @@ set laststatus=2
 "because I hate reaching for the ctrl key
 "map split window to leader ws
 noremap <Leader>ws <C-w>s
+"map split window vertically to leader wv
+noremap <Leader>wv <C-w>v
 "map switch window up to leader wk
 noremap <Leader>wk <C-w>k
 "map switch window down to leader wj
 noremap <Leader>wj <C-w>j
+"map switch window left to leader wh
+noremap <Leader>wh <C-w>h
+"map switch window right to leader wl
+noremap <Leader>wl <C-w>l
 "map move back full screen to leader up
 noremap <Leader>up <C-b>
 "map move forward one screen to leader dn
