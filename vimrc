@@ -11,6 +11,7 @@ Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'wincent/command-t'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " change leader to ,
