@@ -7,11 +7,14 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components'
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
-Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'wincent/command-t'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-eunuch'
 call plug#end()
 
 " change leader to ,
@@ -68,6 +71,8 @@ noremap <Leader>up <C-b>
 "map move forward one screen to leader dn
 noremap <Leader>dn <C-f>
 "map redo to leader r
+" source the vimrc with leader src
+noremap <Leader>src :source ~/.vim/vimrc<CR>
 noremap <Leader>r <C-r>
 "set nerdtree toggle to leader o
 noremap <silent> <Leader>o :NERDTreeToggle<CR>
