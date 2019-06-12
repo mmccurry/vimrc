@@ -8,7 +8,7 @@ Plug 'styled-components/vim-styled-components'
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'wincent/command-t'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -48,10 +48,7 @@ colorscheme vim-monokai-tasty
 highlight SpecialKey ctermbg=235
 "show whitespace
 set list lcs=space:·,tab:>-
-"use monokai lightline theme
-let g:lightline = { 'colorscheme': 'monokai_tasty' }
-"makes lightline work in single window
-set laststatus=2
+let g:airline_theme='monokai_tasty'
 "various remappings mostly changing commands using ctrl to leader
 "because I hate reaching for the ctrl key
 "map split window to leader ws
