@@ -32,7 +32,6 @@ set smartcase
 set incsearch
 "various ui changes
 syntax on
-set number
 "default to relative number
 set relativenumber
 set showcmd
