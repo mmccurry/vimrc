@@ -15,6 +15,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-eunuch'
+Plug 'christoomey/vim-run-interactive'
 call plug#end()
 
 " change leader to ,
@@ -32,6 +33,7 @@ set smartcase
 set incsearch
 "various ui changes
 syntax on
+set number
 "default to relative number
 set relativenumber
 set showcmd
@@ -76,6 +78,8 @@ noremap <silent> <Leader>o :NERDTreeToggle<CR>
 noremap <silent> <Leader><Space> :noh<CR>
 "set toggle relative numbers to leader rel
 noremap <silent> <Leader>rel :set relativenumber!<CR>
+" use leader ri to run interactive shell
+nnoremap <leader>ri :RunInInteractiveShell<space>
 "bracket matching
 inoremap " ""<left>
 inoremap ' ''<left>
