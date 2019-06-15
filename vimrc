@@ -4,12 +4,16 @@ call plug#begin('~/.vim/plugged')
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'styled-components/vim-styled-components'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
-Plug 'wincent/command-t'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    let g:deoplete#enable_at_startup = 1
+Plug 'wincent/command-t', {
+    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+    \ }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -77,6 +81,8 @@ noremap <silent> <Leader>o :NERDTreeToggle<CR>
 noremap <silent> <Leader><Space> :noh<CR>
 "set toggle relative numbers to leader rel
 noremap <silent> <Leader>rel :set relativenumber!<CR>
+"exit terminal with escape
+tnoremap <ESC> <C-\><C-n>
 "bracket matching
 inoremap " ""<left>
 inoremap ' ''<left>
@@ -99,6 +105,10 @@ au BufNewFile,BufRead *.js,*.html,*.css
     set shiftwidth=2
     set expandtab
     set autoindent
+"stop vim-json from hiding quotes in json files
+let g:vim_json_syntax_conceal=0
 "Command T settings
 let g:CommandTMaxFiles=500000
 let g:CommandTFileScanner='watchman'
+"deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
