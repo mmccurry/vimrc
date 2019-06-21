@@ -56,7 +56,7 @@ set foldlevel=99
 colorscheme vim-monokai-tasty
 highlight SpecialKey ctermbg=235
 "show whitespace
-" set list lcs=space:·,tab:>-
+set list lcs=space:·,tab:>-
 let g:airline_theme='monokai_tasty'
 "various remappings mostly changing commands using ctrl to leader
 "because I hate reaching for the ctrl key
