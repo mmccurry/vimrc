@@ -14,6 +14,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
     \ }
+Plug 'neomake/neomake'
+Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -34,6 +36,9 @@ set hlsearch
 set ignorecase
 set smartcase
 set incsearch
+" turn on omnicompletion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 "various ui changes
 syntax on
 set number
@@ -51,7 +56,7 @@ set foldlevel=99
 colorscheme vim-monokai-tasty
 highlight SpecialKey ctermbg=235
 "show whitespace
-set list lcs=space:·,tab:>-
+" set list lcs=space:·,tab:>-
 let g:airline_theme='monokai_tasty'
 "various remappings mostly changing commands using ctrl to leader
 "because I hate reaching for the ctrl key
@@ -92,14 +97,14 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>
 "python indentation
-au BufNewFile,BufRead *.py
+au BufNewFile,BufRead *.py silent
     set tabstop=4
     set softtabstop=4
     set shiftwidth=4
     set expandtab
     set autoindent
 "indentation for javascript, html, and css
-au BufNewFile,BufRead *.js,*.html,*.css
+au BufNewFile,BufRead *.js,*.html,*.css silent
     set tabstop=2
     set softtabstop=2
     set shiftwidth=2
@@ -112,3 +117,5 @@ let g:CommandTMaxFiles=500000
 let g:CommandTFileScanner='watchman'
 "deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" neomake settings
+call neomake#configure#automake('nrwi', 500)
