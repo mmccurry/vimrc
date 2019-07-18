@@ -16,6 +16,7 @@ Plug 'wincent/command-t', {
     \ }
 Plug 'neomake/neomake'
 Plug 'justinmk/vim-sneak'
+Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -29,6 +30,8 @@ let mapleader=','
 set nocompatible
 "don't make swap files
 set noswapfile
+" lets you change buffers without saving changes
+set hidden
 "various settings to modify the way searching works
 set path+=**
 set wildmenu
@@ -56,10 +59,14 @@ set foldlevel=99
 colorscheme vim-monokai-tasty
 highlight SpecialKey ctermbg=235
 "show whitespace
-" set list lcs=space:·,tab:>-
+set list lcs=space:·,tab:>-
 let g:airline_theme='monokai_tasty'
 "various remappings mostly changing commands using ctrl to leader
 "because I hate reaching for the ctrl key
+"map next tab to ,tn
+noremap <silent> <Leader>tn :tabnext<CR>
+"map previous tab to ,tp
+noremap <silent> <Leader>tp :tabprevious<CR>
 "map split window to leader ws
 noremap <Leader>ws <C-w>s
 "map split window vertically to leader wv
@@ -97,7 +104,7 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>
 "python indentation
-au BufNewFile,BufRead *.py silent
+au BufNewFile,BufRead *.py,*.feature silent
     set tabstop=4
     set softtabstop=4
     set shiftwidth=4
