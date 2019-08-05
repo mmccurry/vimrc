@@ -14,7 +14,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
     \ }
-Plug 'neomake/neomake'
 Plug 'justinmk/vim-sneak'
 Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-surround'
@@ -123,6 +122,4 @@ let g:vim_json_syntax_conceal=0
 let g:CommandTMaxFiles=500000
 let g:CommandTFileScanner='watchman'
 "deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" neomake settings
-call neomake#configure#automake('nrwi', 500)
+ inoremap <expr><tab> pumvisible() ? '\<c-n>' : '\<tab>'
