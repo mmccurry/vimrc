@@ -3,10 +3,10 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'pangloss/vim-javascript'
-" Plug 'MaxMEllon/vim-jsx-pretty'
-" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'elzr/vim-json'
-" Plug 'jparise/vim-graphql'
+Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -110,6 +110,8 @@ noremap <Leader>h <C-w>h
 noremap <Leader>l <C-w>l
 
 "-----------Miscellaneous-----------------
+"use Y to copy from cursor to end of line
+noremap Y y$
 "map redo to leader r
 noremap <Leader>r <C-r>
 
