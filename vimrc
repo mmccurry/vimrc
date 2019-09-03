@@ -3,10 +3,10 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" Plug 'MaxMEllon/vim-jsx-pretty'
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'elzr/vim-json'
-Plug 'jparise/vim-graphql'
+" Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -33,6 +33,9 @@ set noswapfile
 "lets you change buffers without saving changes
 set hidden
 
+"use vim's file checking for plugins
+filetype plugin on
+
 "search configs
 set path+=**
 set wildmenu
@@ -42,12 +45,12 @@ set smartcase
 set incsearch
 
 "turn on omnicompletion
-filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 "------------------------------UI Configs-------------------------------------
 syntax on
 set number
+set lazyredraw
 
 "default to relative number
 set relativenumber
@@ -67,24 +70,9 @@ set list lcs=space:·,tab:>-
 set wrap
 set textwidth=0
 set wrapmargin=0
+set expandtab
 set foldmethod=indent
 set foldlevel=99
-
-"python indentation
-au BufNewFile,BufRead *.py,*.feature silent
-    set tabstop=4
-    set softtabstop=4
-    set shiftwidth=4
-    set expandtab
-    set autoindent
-
-"indentation for javascript, html, and css
-au BufNewFile,BufRead *.js,*.html,*.css silent
-    set tabstop=2
-    set softtabstop=2
-    set shiftwidth=2
-    set expandtab
-    set autoindent
 
 "------------------------Bracket Matching----------------------------------
 inoremap " ""<left>
@@ -100,8 +88,8 @@ inoremap {;<CR> {<CR>};<ESC>
 let mapleader=','
 
 "----------------Tabs-------------------
-"map new tab to ,ot
-noremap <silent> <Leader>ot :tabnew<CR>
+"map new tab to ,new
+noremap <silent> <Leader>new :tabnew<CR>
 "map next tab to ,nt
 noremap <silent> <Leader>nt :tabnext<CR>
 "map previous tab to ,pt
@@ -122,11 +110,6 @@ noremap <Leader>h <C-w>h
 noremap <Leader>l <C-w>l
 
 "-----------Miscellaneous-----------------
-"map move back full screen to leader up
-noremap <Leader>up <C-b>
-"map move forward one screen to leader dn
-noremap <Leader>dn <C-f>
-
 "map redo to leader r
 noremap <Leader>r <C-r>
 
@@ -136,8 +119,8 @@ noremap <silent> <Leader>src :source ~/.vim/vimrc<CR>
 "get rid of search highlight with leader + space
 noremap <silent> <Leader><Space> :noh<CR>
 
-"set toggle relative numbers to leader rel
-noremap <silent> <Leader>rel :set relativenumber!<CR>
+"set toggle relative numbers to leader num
+noremap <silent> <Leader>num :set relativenumber!<CR>
 
 "exit terminal with escape
 tnoremap <ESC> <C-\><C-n>
@@ -172,6 +155,8 @@ noremap <silent> <Leader>gc :Gcommit<CR>
 noremap <Leader>ch :Git checkout 
 "checkout development
 noremap <silent> <Leader>dev :Git checkout development<CR>
+"checkout branch starting with mmccurry-LST-
+noremap <Leader>gmm :Git checkout mmccurry-LST-
 "git diff
 noremap <Leader>df :Gdiff 
 "git diff development
