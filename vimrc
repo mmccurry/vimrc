@@ -14,6 +14,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
     \ }
+Plug 'mtth/scratch.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-surround'
@@ -118,6 +119,9 @@ noremap <Leader>r <C-r>
 "source the vimrc with leader src
 noremap <silent> <Leader>src :source ~/.vim/vimrc<CR>
 
+" open vimrc with leader vim
+noremap <silent> <Leader>vim :e ~/.vim/vimrc<CR>
+
 "get rid of search highlight with leader + space
 noremap <silent> <Leader><Space> :noh<CR>
 
@@ -162,4 +166,7 @@ noremap <Leader>gmm :Git checkout mmccurry-LST-
 "git diff
 noremap <Leader>df :Gdiff 
 "git diff development
-noremap <silent> <Leader>dvdf :Gdiff development<CR>
+noremap <silent> <Leader>gdvm :Gdiff development<CR>
+noremap <silent> <Leader>gdev :Gdiff develop<CR>
+"-----------vim scratch settings-----------------------
+let g:scratch_persistence_file='~/.scratch.vim'
