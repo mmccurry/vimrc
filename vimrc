@@ -62,6 +62,7 @@ set cursorline
 
 "colors
 colorscheme vim-monokai-tasty
+"sets the color for whitespace characters to grey
 highlight SpecialKey ctermbg=235
 
 "show whitespace
@@ -128,8 +129,8 @@ noremap <silent> <Leader><Space> :noh<CR>
 "set toggle relative numbers to leader num
 noremap <silent> <Leader>num :set relativenumber!<CR>
 
-"exit terminal with escape
-tnoremap <ESC> <C-\><C-n>
+"exit terminal mode with jk
+tnoremap jk <C-\><C-n>
 
 "-----------------------Plugin Settings----------------------------------------
 
