@@ -9,8 +9,7 @@ Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    let g:deoplete#enable_at_startup = 1
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
     \ }
@@ -37,6 +36,9 @@ set hidden
 "use vim's file checking for plugins
 filetype plugin on
 
+"always show signcolumn
+set signcolumn=yes
+
 "search configs
 set path+=**
 set wildmenu
@@ -44,9 +46,6 @@ set hlsearch
 set ignorecase
 set smartcase
 set incsearch
-
-"turn on omnicompletion
-set omnifunc=syntaxcomplete#Complete
 
 "------------------------------UI Configs-------------------------------------
 syntax on
@@ -60,10 +59,14 @@ set showcmd
 set ruler
 set cursorline
 
-"colors
+"color scheme
 colorscheme vim-monokai-tasty
+
 "sets the color for whitespace characters to grey
 highlight SpecialKey ctermbg=235
+
+"make sign column same color as background
+highlight clear SignColumn
 
 "show whitespace
 set list lcs=space:·,tab:>-
@@ -142,9 +145,11 @@ let g:vim_json_syntax_conceal=0
 let g:CommandTMaxFiles=500000
 let g:CommandTFileScanner='watchman'
 
-"--------------deoplete settings-----------------------
+"--------------coc settings-----------------------
 "use tab completion
  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+ set cmdheight=2
+ set updatetime=300
 
 "------------nerdtree settings-------------------------
 "set nerdtree toggle to leader o
