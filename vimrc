@@ -10,9 +10,7 @@ Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'wincent/command-t', {
-    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-    \ }
+Plug 'jremmen/vim-ripgrep'
 Plug 'mtth/scratch.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'christoomey/vim-system-copy'
@@ -46,6 +44,7 @@ set hlsearch
 set ignorecase
 set smartcase
 set incsearch
+set inccommand=nosplit
 
 "------------------------------UI Configs-------------------------------------
 syntax on
@@ -141,9 +140,9 @@ tnoremap jk <C-\><C-n>
 "stop vim-json from hiding quotes in json files
 let g:vim_json_syntax_conceal=0
 
-"------------- command t settings-----------------------
-let g:CommandTMaxFiles=500000
-let g:CommandTFileScanner='watchman'
+"-------------fzf settings------------------------------
+set rtp+=/usr/local/opt/fzf
+noremap <silent> <Leader>t :FZF<CR>
 
 "--------------coc settings-----------------------
 "use tab completion
