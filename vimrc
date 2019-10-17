@@ -8,8 +8,10 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
+Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mtth/scratch.vim'
 Plug 'justinmk/vim-sneak'
@@ -30,6 +32,9 @@ set noswapfile
 
 "lets you change buffers without saving changes
 set hidden
+
+" save undo tree after closing vim
+set undofile
 
 "use vim's file checking for plugins
 filetype plugin on
@@ -134,6 +139,9 @@ noremap <silent> <Leader>num :set relativenumber!<CR>
 "exit terminal mode with jk
 tnoremap jk <C-\><C-n>
 
+" start visual-block mode
+noremap <Leader>vb <C-v>
+
 "-----------------------Plugin Settings----------------------------------------
 
 "---------------vim-json settings-----------------------
@@ -141,7 +149,7 @@ tnoremap jk <C-\><C-n>
 let g:vim_json_syntax_conceal=0
 
 "-------------fzf settings------------------------------
-set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/opt/fzf
 noremap <silent> <Leader>t :FZF<CR>
 
 "--------------coc settings-----------------------
@@ -175,3 +183,5 @@ noremap <silent> <Leader>gdvm :Gdiff development<CR>
 noremap <silent> <Leader>gdev :Gdiff develop<CR>
 "-----------vim scratch settings-----------------------
 let g:scratch_persistence_file='~/.scratch.vim'
+"-----------undotree settings--------------------------
+noremap <silent> <Leader>u :UndotreeToggle<CR>
