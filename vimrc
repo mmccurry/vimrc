@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'ryanoasis/vim-devicons' "only works if you use a nerd-font compatible font. I'm using mononoki-mono
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -10,9 +11,9 @@ Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf'
-Plug 'jremmen/vim-ripgrep'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node for this to work
+Plug 'junegunn/fzf' "you need to already have fzf installed for this to work
+Plug 'jremmen/vim-ripgrep' "you need to already have ripgrep installed for this to work
 Plug 'mtth/scratch.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'christoomey/vim-system-copy'
@@ -136,12 +137,21 @@ noremap <silent> <Leader><Space> :noh<CR>
 "set toggle relative numbers to leader num
 noremap <silent> <Leader>num :set relativenumber!<CR>
 
-"exit terminal mode with jk
-tnoremap jk <C-\><C-n>
-
 " start visual-block mode
 noremap <Leader>vb <C-v>
 
+"---------Terminal-----------------------------
+function! OpenTerminal()
+    term
+    startinsert
+    setlocal nonumber
+    setlocal norelativenumber
+endfunction()
+
+noremap <Leader>sh :call OpenTerminal()<CR>
+
+"exit terminal mode with jk
+tnoremap jk <C-\><C-n>
 "-----------------------Plugin Settings----------------------------------------
 
 "---------------vim-json settings-----------------------
