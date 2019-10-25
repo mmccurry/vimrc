@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'patstockwell/vim-monokai-tasty'
-Plug 'ryanoasis/vim-devicons' "only works if you use a nerd-font compatible font. I'm using mononoki-mono
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -22,6 +21,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-eunuch'
+Plug 'ryanoasis/vim-devicons' "only works if you use a nerd-font compatible font. I'm using mononoki-mono
 call plug#end()
 
 "---------------------------General Configs---------------------------------
