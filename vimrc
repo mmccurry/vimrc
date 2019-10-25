@@ -148,7 +148,7 @@ function! OpenTerminal()
     setlocal norelativenumber
 endfunction()
 
-noremap <Leader>sh :call OpenTerminal()<CR>
+noremap <silent> <Leader>sh :call OpenTerminal()<CR>
 
 "exit terminal mode with jk
 tnoremap jk <C-\><C-n>
