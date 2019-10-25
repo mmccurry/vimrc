@@ -169,7 +169,16 @@ endfunction()
 
 noremap <silent> <Leader>t :call FZFSearch()<CR>
 
-"--------------coc settings-----------------------
+"--------------FZF settings----------------------------
+function! RipGrep()
+    Rg
+    setlocal nonumber
+    setlocal norelativenumber
+endfunction()
+
+noremap <silent> <Leader>gr :call RipGrep()<CR>
+
+"--------------coc settings----------------------------
 "use tab completion
  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
  set cmdheight=2
