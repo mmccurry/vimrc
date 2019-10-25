@@ -160,7 +160,14 @@ let g:vim_json_syntax_conceal=0
 
 "-------------fzf settings------------------------------
 " set rtp+=/usr/local/opt/fzf
-noremap <silent> <Leader>t :FZF<CR>
+
+function! FZFSearch()
+    FZF
+    setlocal nonumber
+    setlocal norelativenumber
+endfunction()
+
+noremap <silent> <Leader>t :call FZFSearch()<CR>
 
 "--------------coc settings-----------------------
 "use tab completion
