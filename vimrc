@@ -128,8 +128,13 @@ noremap <Leader>r <C-r>
 "source the vimrc with leader src
 noremap <silent> <Leader>src :source ~/.vim/vimrc<CR>
 
-" open vimrc with leader vim
-noremap <silent> <Leader>vim :e ~/.vim/vimrc<CR>
+" open vimrc in new tab with leader vim
+function! OpenVimrc()
+    tabnew
+    e ~/.vim/vimrc
+endfunction()
+
+noremap <silent> <Leader>vim :call OpenVimrc()<CR>
 
 "get rid of search highlight with leader + space
 noremap <silent> <Leader><Space> :noh<CR>
@@ -142,6 +147,7 @@ noremap <Leader>vb <C-v>
 
 "---------Terminal-----------------------------
 function! OpenTerminal()
+    belowright split
     term
     startinsert
     setlocal nonumber
