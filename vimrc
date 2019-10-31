@@ -10,10 +10,9 @@ Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
-Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node for this to work
-Plug 'junegunn/fzf' "you need to already have fzf installed for this to work
-Plug 'jremmen/vim-ripgrep' "you need to already have ripgrep installed for this to work
-Plug 'mtth/scratch.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node to use this
+Plug 'junegunn/fzf' "you need fzf to use this
+Plug 'jremmen/vim-ripgrep' "you need ripgrep to use this
 Plug 'justinmk/vim-sneak'
 Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-surround'
@@ -21,12 +20,14 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-eunuch'
-Plug 'ryanoasis/vim-devicons' "only works if you use a nerd-font compatible font. I'm using mononoki-mono
+Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd-font
 call plug#end()
 
 "---------------------------General Configs---------------------------------
 "turn off vi compatibility
 set nocompatible
+
+set secure
 
 "don't make swap files
 set noswapfile
@@ -56,6 +57,8 @@ set inccommand=nosplit
 syntax on
 set number
 set lazyredraw
+set splitbelow
+set splitright
 
 "default to relative number
 set relativenumber
@@ -98,37 +101,39 @@ inoremap {;<CR> {<CR>};<ESC>
 let mapleader=','
 
 "----------------Tabs-------------------
-"map new tab to ,new
+"new tab
 noremap <silent> <Leader>new :tabnew<CR>
-"map next tab to ,nt
+"next tab
 noremap <silent> <Leader>nt :tabnext<CR>
-"map previous tab to ,pt
+"previous tab
 noremap <silent> <Leader>pt :tabprevious<CR>
 
 "-------Window Split and Navigation--------
-"map split window to leader ws
+"split window horizontally
 noremap <Leader>ws <C-w>s
-"map split window vertically to leader wv
+"split window vertically
 noremap <Leader>wv <C-w>v
-"map switch window up to leader k
+"equalize windows
+noremap <Leader>we <C-w>=
+"switch window up
 noremap <Leader>k <C-w>k
-"map switch window down to leader j
+"switch window down
 noremap <Leader>j <C-w>j
-"map switch window left to leader h
+"switch window left
 noremap <Leader>h <C-w>h
-"map switch window right to leader l
+"switch window right
 noremap <Leader>l <C-w>l
 
 "-----------Miscellaneous-----------------
-"use Y to copy from cursor to end of line
+"copy from cursor to end of line
 noremap Y y$
-"map redo to leader r
+"redo
 noremap <Leader>r <C-r>
 
-"source the vimrc with leader src
+"source vimrc
 noremap <silent> <Leader>src :source ~/.vim/vimrc<CR>
 
-" open vimrc in new tab with leader vim
+"open vimrc in new tab
 function! OpenVimrc()
     tabnew
     e ~/.vim/vimrc
@@ -136,13 +141,13 @@ endfunction()
 
 noremap <silent> <Leader>vim :call OpenVimrc()<CR>
 
-"get rid of search highlight with leader + space
+"get rid of search highlight
 noremap <silent> <Leader><Space> :noh<CR>
 
-"set toggle relative numbers to leader num
+"toggle relative numbers
 noremap <silent> <Leader>num :set relativenumber!<CR>
 
-" start visual-block mode
+"start visual-block mode
 noremap <Leader>vb <C-v>
 
 "---------Terminal-----------------------------
@@ -150,14 +155,36 @@ function! OpenTerminal()
     belowright split
     term
     startinsert
+    resize 30
     setlocal nonumber
     setlocal norelativenumber
 endfunction()
 
 noremap <silent> <Leader>sh :call OpenTerminal()<CR>
 
-"exit terminal mode with jk
+"exit terminal
 tnoremap jk <C-\><C-n>
+
+" -------Scratch-----------------------------------
+function! OpenScratchBuffer()
+    aboveleft split
+    startinsert
+    resize 10
+    e ~/.scratch.txt
+endfunction()
+
+function! OpenEmptyScratchBuffer()
+    aboveleft split
+    startinsert
+    resize 10
+    e ~/.scratch.txt
+    %d
+    w
+endfunction()
+
+noremap <silent> gs :call OpenScratchBuffer()<CR>
+noremap <silent> gS :call OpenEmptyScratchBuffer()<CR>
+
 "-----------------------Plugin Settings----------------------------------------
 
 "---------------vim-json settings-----------------------
@@ -191,7 +218,7 @@ noremap <silent> <Leader>gr :call RipGrep()<CR>
  set updatetime=300
 
 "------------nerdtree settings-------------------------
-"set nerdtree toggle to leader o
+"toggle nerdtree
 noremap <silent> <Leader>o :NERDTreeToggle<CR>
 
 "-----------airline settings---------------------------
