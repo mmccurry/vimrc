@@ -96,6 +96,17 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>
 
+" toggle single quote matching for writing text
+function! WritingModeToggle()
+    if mapcheck("'", "i") == ""
+        inoremap ' ''<left>
+    else
+        iunmap '
+    endif
+endfunction()
+
+noremap <silent> <Leader>pa :call WritingModeToggle()<CR>
+
 "-----------------------Remappings ----------------------------------------
 "change leader to ,
 let mapleader=','
@@ -115,6 +126,10 @@ noremap <Leader>ws <C-w>s
 noremap <Leader>wv <C-w>v
 "equalize windows
 noremap <Leader>we <C-w>=
+" swap windows
+noremap <Leader>wr <C-W>R
+" move window to separate tab
+noremap <Leader>wt <C-W>T
 "switch window up
 noremap <Leader>k <C-w>k
 "switch window down
@@ -123,6 +138,11 @@ noremap <Leader>j <C-w>j
 noremap <Leader>h <C-w>h
 "switch window right
 noremap <Leader>l <C-w>l
+" move to top window
+noremap <Leader>H <C-W><C-T>
+" move to bottom window
+noremap <Leader>L <C-W><C-B>
+
 
 "-----------Miscellaneous-----------------
 "copy from cursor to end of line
@@ -152,6 +172,7 @@ noremap <Leader>vb <C-v>
 
 "---------Terminal-----------------------------
 function! OpenTerminal()
+    wincmd b
     belowright split
     term
     startinsert
@@ -167,15 +188,15 @@ tnoremap jk <C-\><C-n>
 
 " -------Scratch-----------------------------------
 function! OpenScratchBuffer()
+    wincmd t
     aboveleft split
-    startinsert
     resize 10
     e ~/.scratch.txt
 endfunction()
 
 function! OpenEmptyScratchBuffer()
+    wincmd t
     aboveleft split
-    startinsert
     resize 10
     e ~/.scratch.txt
     %d
