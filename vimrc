@@ -12,7 +12,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node to use this
-Plug 'junegunn/fzf' "you need fzf to use this
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep' "you need ripgrep to use this
 Plug 'justinmk/vim-sneak'
 Plug 'christoomey/vim-system-copy'
