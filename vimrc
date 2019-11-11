@@ -20,6 +20,7 @@ Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-eunuch'
 Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd-font
@@ -240,7 +241,7 @@ noremap <silent> <Leader>gr :call RipGrep()<CR>
 "use tab completion
  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
  set cmdheight=2
- set updatetime=300
+ set updatetime=100
 
 "------------nerdtree settings-------------------------
 "toggle nerdtree
