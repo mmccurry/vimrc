@@ -7,6 +7,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
+Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
@@ -28,6 +29,7 @@ call plug#end()
 set nocompatible
 
 set secure
+set sessionoptions-=options
 
 "don't make swap files
 set noswapfile
@@ -96,7 +98,12 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>
 
-" toggle single quote matching for writing text
+
+"-----------------------Remappings ----------------------------------------
+"change leader to ,
+let mapleader=','
+
+"toggle single quote matching for writing text
 function! WritingModeToggle()
     if mapcheck("'", "i") == ""
         inoremap ' ''<left>
@@ -106,10 +113,6 @@ function! WritingModeToggle()
 endfunction()
 
 noremap <silent> <Leader>pa :call WritingModeToggle()<CR>
-
-"-----------------------Remappings ----------------------------------------
-"change leader to ,
-let mapleader=','
 
 "----------------Tabs-------------------
 "new tab
@@ -176,14 +179,14 @@ function! OpenTerminal()
     belowright split
     term
     startinsert
-    resize 30
+    resize 20
     setlocal nonumber
     setlocal norelativenumber
 endfunction()
 
 noremap <silent> <Leader>sh :call OpenTerminal()<CR>
 
-"exit terminal
+"exit terminal mode
 tnoremap jk <C-\><C-n>
 
 " -------Scratch-----------------------------------
@@ -261,7 +264,9 @@ noremap <Leader>df :Gdiff
 "git diff development
 noremap <silent> <Leader>gdvm :Gdiff development<CR>
 noremap <silent> <Leader>gdev :Gdiff develop<CR>
+
 "-----------vim scratch settings-----------------------
 let g:scratch_persistence_file='~/.scratch.vim'
+
 "-----------undotree settings--------------------------
 noremap <silent> <Leader>u :UndotreeToggle<CR>
