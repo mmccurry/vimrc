@@ -21,6 +21,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-eunuch'
 Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd-font
