@@ -24,14 +24,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-eunuch'
-Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd-font
+Plug 'airblade/vim-rooter'
+Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd font, this must be last plugin
 call plug#end()
 
 "---------------------------General Configs---------------------------------
 "turn off vi compatibility
 set nocompatible
 
-set secure
 set sessionoptions-=options
 
 "don't make swap files
@@ -50,7 +50,6 @@ filetype plugin on
 set signcolumn=yes
 
 "search configs
-set path+=**
 set wildmenu
 set hlsearch
 set ignorecase
