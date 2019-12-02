@@ -25,7 +25,7 @@ Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-eunuch'
 Plug 'airblade/vim-rooter'
-Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd font, this must be last plugin
+Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd font, this must be the last plugin
 call plug#end()
 
 "---------------------------General Configs---------------------------------
@@ -40,7 +40,7 @@ set noswapfile
 "lets you change buffers without saving changes
 set hidden
 
-" save undo tree after closing vim
+"save undo tree after closing vim
 set undofile
 
 "use vim's file checking for plugins
@@ -55,6 +55,7 @@ set hlsearch
 set ignorecase
 set smartcase
 set incsearch
+"this only works in neovim
 set inccommand=nosplit
 
 "------------------------------UI Configs-------------------------------------
@@ -74,8 +75,9 @@ set cursorline
 "color scheme
 colorscheme vim-monokai-tasty
 
-"sets the color for whitespace characters to grey
-highlight SpecialKey ctermbg=235
+"without this the background around whitespace characters is a different color
+"than the terminal background. This isn't necessary in neovim
+"highlight SpecialKey ctermbg=235
 
 "make sign column same color as background
 highlight clear SignColumn
