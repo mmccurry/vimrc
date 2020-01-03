@@ -14,7 +14,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node to use this
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep' "you need ripgrep to use this
 Plug 'justinmk/vim-sneak'
 Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-surround'
@@ -133,9 +132,9 @@ noremap <Leader>ws <C-w>s
 noremap <Leader>wv <C-w>v
 "equalize windows
 noremap <Leader>we <C-w>=
-" swap windows
+"swap windows
 noremap <Leader>wr <C-W>R
-" move window to separate tab
+"move window to separate tab
 noremap <Leader>wt <C-W>T
 "switch window up
 noremap <Leader>k <C-w>k
@@ -145,9 +144,9 @@ noremap <Leader>j <C-w>j
 noremap <Leader>h <C-w>h
 "switch window right
 noremap <Leader>l <C-w>l
-" move to top window
+"move to top window
 noremap <Leader>H <C-W><C-T>
-" move to bottom window
+"move to bottom window
 noremap <Leader>L <C-W><C-B>
 
 
@@ -219,7 +218,7 @@ noremap <silent> gS :call OpenEmptyScratchBuffer()<CR>
 "stop vim-json from hiding quotes in json files
 let g:vim_json_syntax_conceal=0
 
-"-------------fzf settings------------------------------
+"-------------fzf and ripgrep settings------------------
 " set rtp+=/usr/local/opt/fzf
 
 function! FZFSearch()
@@ -230,14 +229,21 @@ endfunction()
 
 noremap <silent> <Leader>t :call FZFSearch()<CR>
 
-"--------------FZF settings----------------------------
+function! FZFSearchBuffers()
+    Buffers
+    setlocal nonumber
+    setlocal norelativenumber
+endfunction()
+
+noremap <silent> <Leader>b :call FZFSearchBuffers()<CR>
+
 function! RipGrep()
     Rg
     setlocal nonumber
     setlocal norelativenumber
 endfunction()
 
-noremap <silent> <Leader>gr :call RipGrep()<CR>
+noremap <silent> <Leader>f :call RipGrep()<CR>
 
 "--------------coc settings----------------------------
 "use tab completion
