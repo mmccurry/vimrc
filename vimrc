@@ -1,29 +1,29 @@
 "----------------------------------Plugins---------------------------------
 call plug#begin('~/.vim/plugged')
 
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
+Plug 'christoomey/vim-system-copy'
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
-Plug 'leafgarland/typescript-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'mbbill/undotree'
-Plug 'vim-airline/vim-airline'
-Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node to use this
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-sneak'
-Plug 'christoomey/vim-system-copy'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
-Plug 'tpope/vim-obsession'
+Plug 'justinmk/vim-sneak'
+Plug 'leafgarland/typescript-vim'
+Plug 'mbbill/undotree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node to use this
+Plug 'pangloss/vim-javascript'
+Plug 'patstockwell/vim-monokai-tasty'
+Plug 'scrooloose/nerdtree'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
-Plug 'airblade/vim-rooter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd font, this must be the last plugin
 call plug#end()
 
