@@ -24,6 +24,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'joeytwiddle/sexy_scroller.vim'
+Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd font, this must be the last plugin
 call plug#end()
 
@@ -148,6 +150,11 @@ noremap <Leader>l <C-w>l
 noremap <Leader>H <C-W><C-T>
 "move to bottom window
 noremap <Leader>L <C-W><C-B>
+"scroll up
+noremap <Leader>sk <C-U>
+"scroll down
+noremap <Leader>sj <C-D>
+set scroll=20
 
 
 "-----------Miscellaneous-----------------
@@ -280,3 +287,8 @@ let g:scratch_persistence_file='~/.scratch.vim'
 
 "-----------undotree settings--------------------------
 noremap <silent> <Leader>u :UndotreeToggle<CR>
+
+"----------sexy scroller settings----------------------
+let g:SexyScroller_ScrollTime=3
+let g:SexyScroller_CursorTime=3
+let g:SexyScroller_EasingStyle=3
