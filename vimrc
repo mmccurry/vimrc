@@ -76,8 +76,8 @@ colorscheme vim-monokai-tasty
 let g:vim_jsx_pretty_colorful_config=1
 
 "without this the background around whitespace characters is a different color
-"than the terminal background. This isn't necessary in neovim
-"highlight SpecialKey ctermbg=235
+"than the terminal background.
+highlight SpecialKey ctermbg=235
 
 "make sign column same color as background
 highlight clear SignColumn
