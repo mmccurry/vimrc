@@ -24,8 +24,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'joeytwiddle/sexy_scroller.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd font, this must be the last plugin
 call plug#end()
 
@@ -75,6 +73,7 @@ set cursorline
 
 "color scheme
 colorscheme vim-monokai-tasty
+let g:vim_jsx_pretty_colorful_config=1
 
 "without this the background around whitespace characters is a different color
 "than the terminal background. This isn't necessary in neovim
@@ -91,7 +90,7 @@ set wrap
 set textwidth=0
 set wrapmargin=0
 set expandtab
-set foldmethod=indent
+set foldmethod=manual
 set foldlevel=99
 
 "------------------------Bracket Matching----------------------------------
@@ -287,8 +286,3 @@ let g:scratch_persistence_file='~/.scratch.vim'
 
 "-----------undotree settings--------------------------
 noremap <silent> <Leader>u :UndotreeToggle<CR>
-
-"----------sexy scroller settings----------------------
-let g:SexyScroller_ScrollTime=3
-let g:SexyScroller_CursorTime=3
-let g:SexyScroller_EasingStyle=3
