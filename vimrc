@@ -118,13 +118,20 @@ endfunction()
 
 noremap <silent> <Leader>pa :call WritingModeToggle()<CR>
 
+"toggle mouse
+function! MouseToggle()
+    if &mouse == ""
+        set mouse=a
+    else
+        set mouse=""
+    endif
+endfunction()
+
+noremap <silent> <Leader>mo :call MouseToggle()<CR>
+
 "----------------Tabs-------------------
 "new tab
 noremap <silent> <Leader>new :tabnew<CR>
-"next tab
-noremap <silent> <Leader>nt :tabnext<CR>
-"previous tab
-noremap <silent> <Leader>pt :tabprevious<CR>
 
 "-------Window Split and Navigation--------
 "split window horizontally
