@@ -24,6 +24,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd font, this must be the last plugin
 call plug#end()
 
@@ -258,6 +260,9 @@ endfunction()
 
 noremap <silent> <Leader>f :call RipGrep()<CR>
 
+" use ripgrep for keyword lookup
+set kp=:Rg
+
 "--------------coc settings----------------------------
 "use tab completion
  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -293,3 +298,6 @@ let g:scratch_persistence_file='~/.scratch.vim'
 
 "-----------undotree settings--------------------------
 noremap <silent> <Leader>u :UndotreeToggle<CR>
+
+"-----------pandoc settings----------------------------
+let g:pandoc#modules#disabled=["spell"]
