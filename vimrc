@@ -1,6 +1,7 @@
 "----------------------------------Plugins---------------------------------
 call plug#begin('~/.vim/plugged')
 
+Plug 'tweekmonster/startuptime.vim'
 Plug 'chaoren/vim-wordmotion'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'airblade/vim-gitgutter'
