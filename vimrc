@@ -191,6 +191,9 @@ noremap <silent> <Leader>num :set relativenumber!<CR>
 "start visual-block mode
 noremap <Leader>vb <C-v>
 
+"suspend vim
+noremap <silent> <Leader>z <C-z>
+
 "---------Terminal-----------------------------
 function! OpenTerminal()
     wincmd b
