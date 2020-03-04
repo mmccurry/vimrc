@@ -16,6 +16,7 @@ Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node to use this
 Plug 'pangloss/vim-javascript'
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'scrooloose/nerdtree'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tpope/vim-commentary'
@@ -192,7 +193,7 @@ noremap <silent> <Leader>num :set relativenumber!<CR>
 noremap <Leader>vb <C-v>
 
 "suspend vim
-noremap <silent> <Leader>z <C-z>
+noremap <Leader>z <C-z>
 
 "---------Terminal-----------------------------
 function! OpenTerminal()
@@ -286,14 +287,9 @@ noremap <silent> <Leader>gs :Gstatus<CR>
 noremap <silent> <Leader>gc :Gcommit<CR>
 "git checkout
 noremap <Leader>ch :Git checkout 
-"checkout development
-noremap <silent> <Leader>dev :Git checkout development<CR>
-"checkout branch starting with mmccurry-LST-
-noremap <Leader>gmm :Git checkout mmccurry-LST-
 "git diff
 noremap <Leader>df :Gdiff 
-"git diff development
-noremap <silent> <Leader>gdvm :Gdiff development<CR>
+"git diff develop
 noremap <silent> <Leader>gdev :Gdiff develop<CR>
 
 "-----------vim scratch settings-----------------------
