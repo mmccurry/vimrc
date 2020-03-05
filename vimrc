@@ -27,6 +27,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'pechorin/any-jump.vim'
 Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd font, this must be the last plugin
 call plug#end()
 
@@ -290,7 +291,9 @@ noremap <Leader>ch :Git checkout
 "git diff
 noremap <Leader>df :Gdiff 
 "git diff develop
-noremap <silent> <Leader>gdev :Gdiff develop<CR>
+noremap <silent> <Leader>ddf :Gdiff develop<CR>
+"git diff master
+noremap <silent> <Leader>mdf :Gdiff master<CR>
 
 "-----------vim scratch settings-----------------------
 let g:scratch_persistence_file='~/.scratch.vim'
