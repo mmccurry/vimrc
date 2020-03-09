@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'chrisbra/Colorizer'
 Plug 'christoomey/vim-system-copy'
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
@@ -12,10 +13,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'leafgarland/typescript-vim'
+Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node to use this
 Plug 'pangloss/vim-javascript'
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'pechorin/any-jump.vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'scrooloose/nerdtree'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -27,7 +30,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'pechorin/any-jump.vim'
 Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd font, this must be the last plugin
 call plug#end()
 
@@ -172,6 +174,9 @@ set scroll=20
 noremap Y y$
 "redo
 noremap <Leader>r <C-r>
+"swap 0 and ^
+noremap 0 ^
+noremap ^ 0
 
 "source vimrc
 noremap <silent> <Leader>src :source ~/.vim/vimrc<CR>
@@ -303,3 +308,10 @@ noremap <silent> <Leader>u :UndotreeToggle<CR>
 
 "-----------pandoc settings----------------------------
 let g:pandoc#modules#disabled=["spell"]
+"-----------any-jump-----------------------------------
+let g:any_jump_disable_default_keybindings = 1
+noremap <silent> <Leader>J :AnyJump<CR>
+noremap <silent> <Leader>ab :AnyJumpBack<CR>
+
+"-----------colorizer----------------------------------
+noremap  <Leader>co :ColorToggle<CR>
