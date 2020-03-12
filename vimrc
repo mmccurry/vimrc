@@ -20,7 +20,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'pechorin/any-jump.vim'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'scrooloose/nerdtree'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -30,7 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'ryanoasis/vim-devicons' "this only works if you use a supported font. I'm using mononoki-mono patched with nerd font, this must be the last plugin
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 "---------------------------General Configs---------------------------------
@@ -279,9 +278,14 @@ set kp=:Rg
  set cmdheight=2
  set updatetime=100
 
-"------------nerdtree settings-------------------------
-"toggle nerdtree
-noremap <silent> <Leader>o :NERDTreeToggle<CR>
+"-----------netrw-settings-----------------------------
+" this makes netrw behave pretty much how my nerdtree setup did
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+noremap <silent> <Leader>o :Lexplore<CR>
 
 "-----------airline settings---------------------------
 let g:airline_theme='monokai_tasty'
@@ -315,3 +319,10 @@ noremap <silent> <Leader>ab :AnyJumpBack<CR>
 
 "-----------colorizer----------------------------------
 noremap  <Leader>co :ColorToggle<CR>
+
+" ----------vim-wiki------------------------------------
+nmap <Leader>qq <Plug>VimwikiIndex
+nmap <Leader>qt <Plug>VimwikiTabIndex
+nmap <Leader>qs <Plug>VimwikiUISelect
+nmap <Leader>dt <Plug>VimwikiMakeDiaryNote
+nmap <Leader>di <Plug>VimwikiDiaryIndex
