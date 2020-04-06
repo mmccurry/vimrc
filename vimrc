@@ -59,6 +59,8 @@ set hlsearch
 set ignorecase
 set smartcase
 set incsearch
+
+"incrementally shows status of ex commands
 "this only works in neovim
 set inccommand=nosplit
 
