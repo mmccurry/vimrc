@@ -26,10 +26,10 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vimwiki/vimwiki'
+Plug 'christoomey/vim-conflicted'
 call plug#end()
 
 "---------------------------General Configs---------------------------------
@@ -62,6 +62,44 @@ set incsearch
 "this only works in neovim
 set inccommand=nosplit
 
+"------------------------------Status Line------------------------------------
+"status line highlight groups
+highlight StatuslineGit ctermbg=darkgray ctermfg=darkgreen guibg=darkgray guifg=green
+highlight StatuslineFilePath ctermbg=darkgrey ctermfg=white guibg=darkgrey guifg=white
+highlight StatuslineFileName ctermbg=darkgrey ctermfg=blue guibg=darkgrey guifg=lightblue
+highlight StatuslineFileType ctermbg=darkgrey ctermfg=yellow guibg=darkgrey guifg=yellow
+
+"status line elements
+function! StatuslineGit()
+  let l:branchname = FugitiveHead()
+  return strlen(l:branchname) > 0 ? l:branchname : 'No Git Repo'
+endfunction
+
+function! StatuslineFileType()
+    return ''.&filetype.''
+endfunction
+
+function! StatuslineFilePath()
+    let l:filetype = expand("%:h")
+    return l:filetype == '.' ? 'root' : l:filetype
+endfunction
+
+function! StatuslineFileName()
+    return expand("%:t")
+endfunction
+
+"build status line
+set laststatus=2
+set statusline=
+set statusline+=%#StatuslineGit#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#StatuslineFilePath#
+set statusline+=\ %{StatuslineFilePath()}/
+set statusline+=%#StatuslineFileName#
+set statusline+=%{StatuslineFileName()}
+set statusline+=%#StatuslineFileType#
+set statusline+=\ %{StatuslineFileType()}
+
 "------------------------------UI Configs-------------------------------------
 syntax on
 set number
@@ -73,7 +111,6 @@ set splitright
 set relativenumber
 
 set showcmd
-set ruler
 set cursorline
 
 "color scheme
@@ -82,7 +119,7 @@ let g:vim_jsx_pretty_colorful_config=1
 
 "without this the background around whitespace characters is a different color
 "than the terminal background.
-highlight SpecialKey ctermbg=235
+highlight SpecialKey ctermbg=235 guibg=Grey15
 
 "make sign column same color as background
 highlight clear SignColumn
@@ -284,11 +321,8 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
-let g:netrw_winsize = 25
+let g:netrw_winsize = 15
 noremap <silent> <Leader>o :Lexplore<CR>
-
-"-----------airline settings---------------------------
-let g:airline_theme='monokai_tasty'
 
 "-----------fugitive settings--------------------------
 "git status
