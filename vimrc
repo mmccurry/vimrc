@@ -77,17 +77,17 @@ function! StatuslineGit()
   return strlen(l:branchname) > 0 ? l:branchname : 'No Git Repo'
 endfunction
 
-function! StatuslineFileType()
-    return ''.&filetype.''
-endfunction
-
 function! StatuslineFilePath()
-    let l:filetype = expand("%:h")
-    return l:filetype == '.' ? 'root' : l:filetype
+    let l:filepath = expand('%:h')
+    return l:filepath == '.' || l:filepath == '' ? '' : l:filepath . '/'
 endfunction
 
 function! StatuslineFileName()
     return expand("%:t")
+endfunction
+
+function! StatuslineFileType()
+    return ''.&filetype.''
 endfunction
 
 "build status line
@@ -96,7 +96,7 @@ set statusline=
 set statusline+=%#StatuslineGit#
 set statusline+=%{StatuslineGit()}
 set statusline+=%#StatuslineFilePath#
-set statusline+=\ %{StatuslineFilePath()}/
+set statusline+=\ %{StatuslineFilePath()}
 set statusline+=%#StatuslineFileName#
 set statusline+=%{StatuslineFileName()}
 set statusline+=%#StatuslineFileType#
