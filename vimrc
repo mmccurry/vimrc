@@ -239,13 +239,16 @@ noremap <Leader>vb <C-v>
 "suspend vim
 noremap <Leader>z <C-z>
 
+"compile current file with lilypond
+noremap <Leader>lp :!lilypond %<CR>
+
 "---------Terminal-----------------------------
 function! OpenTerminal()
     wincmd b
     belowright split
     term
     startinsert
-    resize 20
+    resize 10
     setlocal nonumber
     setlocal norelativenumber
 endfunction()
