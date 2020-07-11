@@ -26,8 +26,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vimwiki/vimwiki'
 Plug 'christoomey/vim-conflicted'
 call plug#end()
@@ -349,8 +347,6 @@ let g:scratch_persistence_file='~/.scratch.vim'
 "-----------undotree settings--------------------------
 noremap <silent> <Leader>u :UndotreeToggle<CR>
 
-"-----------pandoc settings----------------------------
-let g:pandoc#modules#disabled=["spell"]
 "-----------any-jump-----------------------------------
 let g:any_jump_disable_default_keybindings = 1
 noremap <silent> <Leader>J :AnyJump<CR>
