@@ -94,7 +94,6 @@ highlight clear SignColumn
 "show whitespace
 set list lcs=space:·,tab:>-
 
-
 "------------------------------Status Line------------------------------------
 " load statusline colorscheme
 colorscheme statusline
