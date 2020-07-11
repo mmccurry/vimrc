@@ -33,6 +33,9 @@ Plug 'christoomey/vim-conflicted'
 call plug#end()
 
 "---------------------------General Configs---------------------------------
+"add .vim/ to runtime path
+set rtp+=~/.vim
+
 "turn off vi compatibility
 set nocompatible
 
@@ -64,12 +67,37 @@ set incsearch
 "this only works in neovim
 set inccommand=nosplit
 
+"------------------------------UI Configs-------------------------------------
+syntax on
+set number
+set lazyredraw
+set splitbelow
+set splitright
+
+"default to relative number
+set relativenumber
+
+set showcmd
+set cursorline
+
+"color scheme
+colorscheme vim-monokai-tasty
+let g:vim_jsx_pretty_colorful_config=1
+
+"without this the background around whitespace characters is a different color
+"than the terminal background.
+highlight SpecialKey ctermbg=235 guibg=Grey15
+
+"make sign column same color as background
+highlight clear SignColumn
+
+"show whitespace
+set list lcs=space:·,tab:>-
+
+
 "------------------------------Status Line------------------------------------
-"status line highlight groups
-highlight StatuslineGit ctermbg=darkgray ctermfg=darkgreen guibg=darkgray guifg=green
-highlight StatuslineFilePath ctermbg=darkgrey ctermfg=white guibg=darkgrey guifg=white
-highlight StatuslineFileName ctermbg=darkgrey ctermfg=blue guibg=darkgrey guifg=lightblue
-highlight StatuslineFileType ctermbg=darkgrey ctermfg=yellow guibg=darkgrey guifg=yellow
+" load statusline colorscheme
+colorscheme statusline
 
 "status line elements
 function! StatuslineGit()
@@ -101,33 +129,6 @@ set statusline+=%#StatuslineFileName#
 set statusline+=%{StatuslineFileName()}
 set statusline+=%#StatuslineFileType#
 set statusline+=\ %{StatuslineFileType()}
-
-"------------------------------UI Configs-------------------------------------
-syntax on
-set number
-set lazyredraw
-set splitbelow
-set splitright
-
-"default to relative number
-set relativenumber
-
-set showcmd
-set cursorline
-
-"color scheme
-colorscheme vim-monokai-tasty
-let g:vim_jsx_pretty_colorful_config=1
-
-"without this the background around whitespace characters is a different color
-"than the terminal background.
-highlight SpecialKey ctermbg=235 guibg=Grey15
-
-"make sign column same color as background
-highlight clear SignColumn
-
-"show whitespace
-set list lcs=space:·,tab:>-
 
 "------------------------Indentation Settings-------------------------------
 set wrap

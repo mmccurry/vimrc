@@ -1,0 +1,4 @@
+highlight StatuslineGit ctermbg=darkgrey ctermfg=darkgreen
+highlight StatuslineFilePath ctermbg=darkgrey ctermfg=white
+highlight StatuslineFileName ctermbg=darkgrey ctermfg=blue
+highlight StatuslineFileType ctermbg=darkgrey ctermfg=yellow
