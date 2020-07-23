@@ -339,9 +339,6 @@ noremap <silent> <Leader>ddf :Gdiff develop<CR>
 "git diff master
 noremap <silent> <Leader>mdf :Gdiff master<CR>
 
-"-----------vim scratch settings-----------------------
-let g:scratch_persistence_file='~/.scratch.vim'
-
 "-----------undotree settings--------------------------
 noremap <silent> <Leader>u :UndotreeToggle<CR>
 
@@ -349,13 +346,3 @@ noremap <silent> <Leader>u :UndotreeToggle<CR>
 let g:any_jump_disable_default_keybindings = 1
 noremap <silent> <Leader>J :AnyJump<CR>
 noremap <silent> <Leader>ab :AnyJumpBack<CR>
-
-"-----------colorizer----------------------------------
-noremap  <Leader>co :ColorToggle<CR>
-
-" ----------vim-wiki------------------------------------
-nmap <Leader>qq <Plug>VimwikiIndex
-nmap <Leader>qt <Plug>VimwikiTabIndex
-nmap <Leader>qs <Plug>VimwikiUISelect
-nmap <Leader>dt <Plug>VimwikiMakeDiaryNote
-nmap <Leader>di <Plug>VimwikiDiaryIndex
