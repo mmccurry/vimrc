@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'chrisbra/Colorizer'
 Plug 'christoomey/vim-system-copy'
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
@@ -26,7 +25,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
-Plug 'vimwiki/vimwiki'
 Plug 'christoomey/vim-conflicted'
 call plug#end()
 
