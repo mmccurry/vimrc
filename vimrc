@@ -59,9 +59,12 @@ set ignorecase
 set smartcase
 set incsearch
 
+if has('nvim')
 "incrementally shows status of ex commands
-"this only works in neovim
-set inccommand=nosplit
+    set inccommand=nosplit
+" set pyx to prefer python3
+    set pyxversion=3
+endif
 
 "------------------------------UI Configs-------------------------------------
 syntax on
