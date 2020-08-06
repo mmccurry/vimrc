@@ -17,7 +17,6 @@ Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node to use this
 Plug 'pangloss/vim-javascript'
 Plug 'patstockwell/vim-monokai-tasty'
-Plug 'pechorin/any-jump.vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tpope/vim-commentary'
@@ -241,22 +240,6 @@ noremap <Leader>z <C-z>
 "compile current file with lilypond
 noremap <Leader>lp :!lilypond %<CR>
 
-"---------Terminal-----------------------------
-function! OpenTerminal()
-    wincmd b
-    belowright split
-    term
-    startinsert
-    resize 10
-    setlocal nonumber
-    setlocal norelativenumber
-endfunction()
-
-noremap <silent> <Leader>sh :call OpenTerminal()<CR>
-
-"exit terminal mode
-tnoremap jk <C-\><C-n>
-
 " -------Scratch-----------------------------------
 function! OpenScratchBuffer()
     wincmd t
@@ -337,15 +320,6 @@ noremap <silent> <Leader>gc :Gcommit<CR>
 noremap <Leader>ch :Git checkout 
 "git diff
 noremap <Leader>df :Gdiff 
-"git diff develop
-noremap <silent> <Leader>ddf :Gdiff develop<CR>
-"git diff master
-noremap <silent> <Leader>mdf :Gdiff master<CR>
 
 "-----------undotree settings--------------------------
 noremap <silent> <Leader>u :UndotreeToggle<CR>
-
-"-----------any-jump-----------------------------------
-let g:any_jump_disable_default_keybindings = 1
-noremap <silent> <Leader>J :AnyJump<CR>
-noremap <silent> <Leader>ab :AnyJumpBack<CR>
