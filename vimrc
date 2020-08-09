@@ -1,6 +1,5 @@
 "----------------------------------Plugins---------------------------------
 call plug#begin('~/.vim/plugged')
-
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
@@ -10,6 +9,7 @@ Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
+Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'leafgarland/typescript-vim'
 Plug 'machakann/vim-highlightedyank'
@@ -24,7 +24,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
-Plug 'christoomey/vim-conflicted'
 call plug#end()
 
 "---------------------------General Configs---------------------------------
@@ -302,14 +301,16 @@ set kp=:Rg
  set cmdheight=2
  set updatetime=100
 
-"-----------netrw-settings-----------------------------
-" this makes netrw behave pretty much how my nerdtree setup did
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 15
-noremap <silent> <Leader>o :Lexplore<CR>
+"-----------dirvish-settings-----------------------------
+function! DirvishToggle()
+    if &filetype == "dirvish"
+        b#
+    else
+        Dirvish
+    endif
+endfunction
+
+noremap <silent> <Leader>o :call DirvishToggle()<CR>
 
 "-----------fugitive settings--------------------------
 "git status
