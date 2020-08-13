@@ -197,11 +197,6 @@ noremap <Leader>l <C-w>l
 noremap <Leader>H <C-W><C-T>
 "move to bottom window
 noremap <Leader>L <C-W><C-B>
-"scroll up
-noremap <Leader>sk <C-U>
-"scroll down
-noremap <Leader>sj <C-D>
-set scroll=20
 
 "-----------Miscellaneous-----------------
 "copy from cursor to end of line
