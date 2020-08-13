@@ -60,7 +60,7 @@ set incsearch
 if has('nvim')
 "incrementally shows status of ex commands
     set inccommand=nosplit
-" set pyx to prefer python3
+"set pyx to prefer python3
     set pyxversion=3
 endif
 
@@ -92,7 +92,7 @@ highlight clear SignColumn
 set list lcs=space:·,tab:>-
 
 "------------------------------Status Line------------------------------------
-" load statusline colorscheme
+"load statusline colorscheme
 colorscheme statusline
 
 "status line elements
@@ -203,7 +203,6 @@ noremap <Leader>sk <C-U>
 noremap <Leader>sj <C-D>
 set scroll=20
 
-
 "-----------Miscellaneous-----------------
 "copy from cursor to end of line
 noremap Y y$
@@ -239,7 +238,7 @@ noremap <Leader>z <C-z>
 "compile current file with lilypond
 noremap <Leader>lp :!lilypond %<CR>
 
-" -------Scratch-----------------------------------
+"-------Scratch-----------------------------------
 function! OpenScratchBuffer()
     wincmd t
     aboveleft split
@@ -266,7 +265,7 @@ noremap <silent> gS :call OpenEmptyScratchBuffer()<CR>
 let g:vim_json_syntax_conceal=0
 
 "-------------fzf and ripgrep settings------------------
-" set rtp+=/usr/local/opt/fzf
+"set rtp+=/usr/local/opt/fzf
 
 function! FZFSearch()
     FZF
@@ -292,7 +291,7 @@ endfunction()
 
 noremap <silent> <Leader>f :call RipGrep()<CR>
 
-" use ripgrep for keyword lookup
+"use ripgrep for keyword lookup
 set kp=:Rg
 
 "--------------coc settings----------------------------
