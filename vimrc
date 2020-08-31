@@ -289,6 +289,20 @@ noremap <silent> <Leader>f :call RipGrep()<CR>
 "use ripgrep for keyword lookup
 set kp=:Rg
 
+"--------------arduino---------------------------------
+function! ArduinoCompile()
+    let l:sketch = expand('%:h')
+    execute "!arduino-cli compile --fqbn arduino:avr:uno " . l:sketch
+endfunction()
+
+function! ArduinoUpload()
+    let l:sketch = expand('%:h')
+    execute "!arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno " . l:sketch
+endfunction()
+
+noremap <silent> <Leader>ac :call ArduinoCompile()<CR>
+noremap <silent> <Leader>au :call ArduinoUpload()<CR>
+
 "--------------coc settings----------------------------
 "use tab completion
  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
