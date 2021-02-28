@@ -24,6 +24,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
+Plug 'qpkorr/vim-renamer'
 call plug#end()
 
 "---------------------------General Configs---------------------------------
