@@ -328,13 +328,15 @@ noremap <silent> <Leader>o :call DirvishToggle()<CR>
 
 "-----------fugitive settings--------------------------
 "git status
-noremap <silent> <Leader>gs :Gstatus<CR>
+noremap <silent> <Leader>gs :Git<CR>
 "git commit
 noremap <silent> <Leader>gc :Gcommit<CR>
 "git checkout
 noremap <Leader>ch :Git checkout 
-"git diff
+"side by side diff of current file
 noremap <Leader>df :Gdiff 
+"open diff tool
+noremap <Leader>dt :Git difftool<CR>
 
 "-----------undotree settings--------------------------
 noremap <silent> <Leader>u :UndotreeToggle<CR>
