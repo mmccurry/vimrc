@@ -28,6 +28,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
 call plug#end()
+" test
 
 "---------------------------General Configs---------------------------------
 "add .vim/ to runtime path
