@@ -11,20 +11,22 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
+Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
 Plug 'leafgarland/typescript-vim'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "you need node to use this
 Plug 'pangloss/vim-javascript'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'qpkorr/vim-renamer'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
-Plug 'qpkorr/vim-renamer'
 call plug#end()
 
 "---------------------------General Configs---------------------------------
