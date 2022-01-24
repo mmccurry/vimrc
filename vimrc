@@ -313,6 +313,9 @@ noremap <silent> <Leader>au :call ArduinoUpload()<CR>
  set updatetime=100
 
 "-----------dirvish-settings-----------------------------
+let g:dirvish_mode = 1
+let g:dirvish_relative_paths = 0
+
 function! DirvishToggle()
     if &filetype == "dirvish"
         b#
