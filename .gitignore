@@ -2,3 +2,5 @@ autoload/**
 plugged/**
 .netrwhist
 tags
+tags.lock
+tags.temp
